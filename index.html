@@ -258,10 +258,9 @@
     <script src="js/creative.js"></script>
     <script src="libs/flipclockjs/flipclock.min.js"></script>
     <script src="libs/flipclockjs/flipclock.extended.js"></script>
+    <script src="libs/countdownjs/countdown.min.js"></script>
 
     <script type="text/javascript">
-        var clock;
-        
         $(document).ready(function() {
             var clock;
 
@@ -279,9 +278,10 @@
                 }
             });
 
-            epochTime = new Date(2015, 10, 1, 16, 0, 0, 0);
-            currentTime = new Date();
-            secondsToCount = Math.round((epochTime - currentTime) / 1000);
+            var epochTime = new Date(2015, 10, 1, 16, 0, 0, 0);
+            var currentTime = new Date();
+            var secondsToCount = Math.round((epochTime - currentTime) / 1000);
+
             clock.setTime(secondsToCount);
             clock.setCountdown(true);
             clock.start();
