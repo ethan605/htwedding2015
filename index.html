@@ -78,6 +78,9 @@
         <div class="header-content">
             <div class="header-content-inner">
                 <div class="flip-clock"></div>
+                <div class="plain-countdown" style="color:black; margin-top: 6em;">
+                    <div class="countdown-text"></div>
+                </div>
             </div>
         </div>
     </header>
@@ -269,6 +272,9 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
+            if (!$(".flip-clock").is(":visible"))
+                return;
+
             var clock;
 
             clock = $('.flip-clock').FlipClock({
@@ -292,6 +298,32 @@
             clock.setTime(secondsToCount);
             clock.setCountdown(true);
             clock.start();
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if (!$(".plain-countdown").is(":visible"))
+                return;
+
+            var epochTime = new Date(2015, 10, 1, 16, 0, 1, 0);
+            var clock = countdown(epochTime);
+
+            if (clock.value >= 0)
+                return;
+
+            $(".countdown-text").text(clock.toString());
+
+            var countdownInterval = setInterval(function(){ 
+                clock = countdown(epochTime);
+
+                if (clock.value >= 0) {
+                    clearInterval(countdownInterval);
+                    return;
+                }
+
+                $(".countdown-text").html(clock.toHTML());
+            }, 1000);
         });
     </script>
 
