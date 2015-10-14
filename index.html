@@ -78,7 +78,7 @@
         <div class="header-content">
             <div class="header-content-inner">
                 <div class="flip-clock"></div>
-                <div class="plain-countdown" style="color:black; margin-top: 6em;">
+                <div class="plain-countdown">
                     <div class="countdown-text"></div>
                 </div>
             </div>
@@ -305,6 +305,15 @@
         $(document).ready(function() {
             if (!$(".plain-countdown").is(":visible"))
                 return;
+
+            countdown.setLabels(
+                'mili-giây| giây| phút| giờ| ngày| tuần| tháng| năm| thập kỷ| thế kỷ| thiên niên kỷ',
+                'mili-giây| giây| phút| giờ| ngày| tuần| tháng| năm| thập kỷ| thế kỷ| thiên niên kỷ',
+                ', ',
+                null,
+                null,
+                null
+            );
 
             var epochTime = new Date(2015, 10, 1, 16, 0, 1, 0);
             var clock = countdown(epochTime);
