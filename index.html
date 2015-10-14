@@ -24,6 +24,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/creative.css" type="text/css">
+    <link rel="stylesheet" href="libs/flipclockjs/flipclock.css" type="text/css">
 
     <link rel="shortcut icon" href="img/double-happiness.ico">
 
@@ -76,10 +77,7 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <!-- <h1>Your Favorite Source of Free Bootstrap Themes</h1>
-                <hr>
-                <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                <a href="#passport" class="btn btn-primary btn-xl page-scroll">Find Out More</a> -->
+                <div class="flip-clock"></div>
             </div>
         </div>
     </header>
@@ -240,8 +238,8 @@
     <!-- <iframe src="http://www.nhaccuatui.com/mh/background/6wxzvEkMn8" width="0" height="0" frameborder="0" allowfullscreen></iframe> -->
 
     <div class="footer-audio-player">
-        <audio autoplay controls>
-          <source src="media/beautiful-in-white.mp3" type="audio/mp3">
+        <audio controls>
+          <source src="media/beautiful-in-white.ogg" type="audio/ogg">
         </audio>
     </div>
 
@@ -258,6 +256,37 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
+    <script src="libs/flipclockjs/flipclock.min.js"></script>
+    <script src="libs/flipclockjs/flipclock.extended.js"></script>
+
+    <script type="text/javascript">
+        var clock;
+        
+        $(document).ready(function() {
+            var clock;
+
+            clock = $('.flip-clock').FlipClock({
+                clockFace: 'DailyCounter',
+                autoStart: false,
+                language: 'vi',
+                callbacks: {
+                    stop: function() {
+                      $('.flip-clock').fadeOut();
+                      audio = $('.footer-audio-player audio')[0];
+                      audio.pause();
+                      audio.currentTime = 0;
+                    }
+                }
+            });
+
+            epochTime = new Date(2015, 10, 1, 16, 0, 0, 0);
+            currentTime = new Date();
+            secondsToCount = Math.round((epochTime - currentTime) / 1000);
+            clock.setTime(secondsToCount);
+            clock.setCountdown(true);
+            clock.start();
+        });
+    </script>
 
 </body>
 
