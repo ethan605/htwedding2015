@@ -146,7 +146,7 @@ aside {
     .navbar-default .nav > li>a,
     .navbar-default .nav>li>a:focus {
         /*color: rgba(255,255,255,.7);*/
-        color: rgba(248,53,62,.7);
+        color: rgba(0,0,0,.7);
     }
 
     .navbar-default .nav > li>a:hover,
@@ -292,7 +292,6 @@ header .header-content .header-content-inner p {
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     font-weight: bold;
     font-size: 1.5em;
-    opacity: 0.8;
 }
 
 @media(min-width: 665px) {
