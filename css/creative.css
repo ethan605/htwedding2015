@@ -53,17 +53,45 @@ p {
 
 .bg-primary {
     background-color: #f05f40;
-    /*background-color: white;*/
     text-align: center;
     padding: 50px 0;
+    height: 528px;
 }
 
-.bg-primary .passport-cover-front img {
+.bg-primary .container {
+    position: relative;
+}
+
+.bg-primary .passport-cover {
+    margin-left: 8%;
+}
+
+#pp-cover-front, #pp-cover-rear {
+    position: absolute;
+}
+
+#pp-cover-front {
+    z-index: 2;
+}
+
+#pp-cover-rear {
+    z-index: 1;
+}
+
+.bg-primary .passport-cover img {
     width: 300px;
 }
 
 @media(min-width: 410px) {
-    .bg-primary .passport-cover-front img {
+    .bg-primary {
+        height: 630px;
+    }
+
+    .bg-primary .passport-cover {
+        margin-left: 33%;
+    }
+
+    .bg-primary .passport-cover img {
         width: 372px;
     }
 }
@@ -304,7 +332,7 @@ header .header-content .header-content-inner p {
     max-width: 400px;
 }
 
-@media(min-width:992px) {
+@media(min-width: 992px) {
     .service-box {
         margin: 20px auto 0;
     }
