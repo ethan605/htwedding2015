@@ -84,12 +84,22 @@
 
     <section class="bg-primary" id="passport">
         <div class="container">
-            <div class="passport-cover" id="pp-cover-front">
+            <div id="passport-flip">
+                <div class="hard">
+                    <img src="img/invitation-cards/passport-cover-front.png" alt="">
+                </div>
+                <div class="hard"></div>
+                <div class="hard">
+                    <img src="img/invitation-cards/passport-cover-rear.png" alt="">
+                </div>
+                <div class="hard"></div>
+            </div>
+            <!-- <div class="passport-cover" id="pp-cover-front">
                 <img src="img/invitation-cards/passport-cover-front.png" alt="">
-            </div>
-            <div class="passport-cover" id="pp-cover-rear">
+            </div> -->
+            <!-- <div class="passport-cover" id="pp-cover-rear">
                 <img src="img/invitation-cards/passport-cover-rear.png" alt="">
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -262,6 +272,7 @@
     <script src="libs/flipclockjs/flipclock.min.js"></script>
     <script src="libs/flipclockjs/flipclock.extended.js"></script>
     <script src="libs/countdownjs/countdown.min.js"></script>
+    <script src="libs/turnjs/turn.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -320,6 +331,16 @@
 
                 $(".countdown-text").html(clock.toHTML());
             }, 1000);
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#passport-flip").turn({
+                width: 300,
+                height: 500,
+                autoCenter: true
+            });
         });
     </script>
 
