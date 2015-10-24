@@ -84,21 +84,30 @@
 
     <section class="bg-primary" id="passport">
         <div class="container">
-            <div id="passport-flip">
-                <div class="hard">
-                    <img src="img/invitation-cards/passport-cover-front.png" alt="">
-                </div>
-                <div class="hard"></div>
-                <div class="hard">
-                    <img src="img/invitation-cards/passport-cover-rear.png" alt="">
-                </div>
-                <div class="hard"></div>
+            <div class="passport-cover">
+                <img src="img/invitation-cards/passport-cover-front.svg" alt="" width="372px">
             </div>
-            <!-- <div class="passport-cover" id="pp-cover-front">
-                <img src="img/invitation-cards/passport-cover-front.png" alt="">
-            </div> -->
-            <!-- <div class="passport-cover" id="pp-cover-rear">
-                <img src="img/invitation-cards/passport-cover-rear.png" alt="">
+            <div class="passport-inside">
+                <div>
+                    <img src="img/invitation-cards/passport-inside-top.svg" alt="" width="370px">
+                </div>
+                <div>
+                    <img src="img/invitation-cards/passport-inside-bottom.svg" alt="" width="370px">
+                </div>
+            </div>
+            <!-- <div id="passport-flip">
+                <div class="hard">
+                    <img src="img/invitation-cards/passport-cover-front.svg" alt="" width="370px">
+                </div>
+                <div>
+                    <img src="img/invitation-cards/passport-inside-top.svg" alt="" height="370px">
+                </div>
+                <div>
+                    <img src="img/invitation-cards/passport-inside-bottom.svg" alt="" height="370px">
+                </div>
+                <div class="hard">
+                    <img src="img/invitation-cards/passport-cover-front.svg" alt="" width="370px">
+                </div>
             </div> -->
         </div>
     </section>
@@ -243,8 +252,6 @@
         </div>
     </section>
 
-    <!-- <iframe src="http://www.nhaccuatui.com/mh/background/6wxzvEkMn8" width="0" height="0" frameborder="0" allowfullscreen></iframe> -->
-
     <div class="footer-audio-player">
         <audio controls>
           <source src="media/beautiful-in-white.ogg" type="audio/ogg">
@@ -333,17 +340,6 @@
             }, 1000);
         });
     </script>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#passport-flip").turn({
-                width: 300,
-                height: 500,
-                autoCenter: true
-            });
-        });
-    </script>
-
 </body>
 
 </html>
